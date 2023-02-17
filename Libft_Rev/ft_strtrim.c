@@ -18,6 +18,8 @@ char	*ft_strtrim(char const *s, char const *set)
 	size_t	slen;
 	char	*sr;
 
+	if (s == NULL)
+		return (0);
 	sr = (char *)s;
 	i = 0;
 	while (sr[i] && ft_strchr(set, sr[i]))

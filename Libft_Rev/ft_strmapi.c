@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	dup = ft_strdup(s);
 	index = 0;
-	while (dup[index] && index < ft_strlen(s))
+	while (dup && dup[index] && index < ft_strlen(s))
 	{
 		dup[index] = f(index, dup[index]);
 		index++;

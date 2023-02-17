@@ -16,6 +16,8 @@ char	*ft_strchr(const char *str, int c)
 {
 	char	*runner;
 
+	if (str == NULL)
+		return (0);
 	runner = (char *)str;
 	if (c != '\0')
 	{
@@ -30,8 +32,6 @@ char	*ft_strchr(const char *str, int c)
 		return (0);
 	}
 	while (*runner)
-	{
 		runner++;
-	}
 	return (runner);
 }

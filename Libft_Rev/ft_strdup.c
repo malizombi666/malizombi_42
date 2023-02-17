@@ -19,8 +19,12 @@ char	*ft_strdup(const char *s1)
 	size_t	len;
 	char	*b;
 
+	if (s1 == NULL)
+		return (0);
 	len = ft_strlen(s1);
 	buff = (char *)malloc(len + 1);
+	if (!buff)
+		return (0);
 	b = buff;
 	while (len--)
 		*(buff++) = *((char *)s1++);

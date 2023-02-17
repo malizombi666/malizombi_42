@@ -21,7 +21,8 @@ int	beam(char x, char ch)
 
 void	shifter(char const **txt, unsigned int i)
 {
-	*txt = *txt + i;
+	if (*txt != NULL)
+		*txt = *txt + i;
 	return ;
 }
 
@@ -30,6 +31,8 @@ unsigned int	ft_count(const char *str, char c)
 	unsigned int	i;
 	unsigned int	count;
 
+	if (str == NULL)
+		return (0);
 	count = 0;
 	i = 0;
 	while (str[i])
@@ -52,6 +55,8 @@ char	*cutter(char const **text, char c)
 	unsigned long		end;
 	char				*word;
 
+	if (*text == NULL)
+		return (0);
 	i = 0;
 	while ((*text)[i] && !beam((*text)[i], c))
 		i++;

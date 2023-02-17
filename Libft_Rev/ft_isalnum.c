@@ -15,8 +15,6 @@
 int	ft_isalnum(int arg)
 {
 	if (ft_isdigit(arg) || ft_isalpha(arg))
-	{
 		return (1);
-	}
 	return (0);
 }

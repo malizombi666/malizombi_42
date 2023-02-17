@@ -16,6 +16,8 @@ void	ft_bzero(void *s, size_t n)
 {
 	char	*runner;
 
+	if (s == NULL)
+		return ;
 	runner = s;
 	while (n--)
 		*(runner++) = '\0';

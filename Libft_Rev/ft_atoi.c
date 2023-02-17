@@ -25,6 +25,8 @@ int	ft_atoi(const char *str)
 	int	num;
 	int	sign;
 
+	if (str == NULL)
+		return (0);
 	num = 0;
 	sign = 1;
 	while (*cast(str) == 32 || (*cast(str) <= 13 && *cast(str) >= 9))
@@ -45,7 +47,7 @@ int	ft_atoi(const char *str)
 
 /*int main()
 {
-	const char s[] = "-1";
+	const char *s = NULL;
 	printf ("atoi ins ->> %d\n", ft_atoi(s));
 	return 0;
 }*/

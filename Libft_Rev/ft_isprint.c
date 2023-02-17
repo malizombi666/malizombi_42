@@ -15,8 +15,6 @@
 int	ft_isprint(int a)
 {
 	if (a < 0040 || a > 0176)
-	{
 		return (0);
-	}
 	return (1);
 }

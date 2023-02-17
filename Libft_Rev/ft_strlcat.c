@@ -14,25 +14,26 @@
 #include <string.h>
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-	{
-		i++;
-	}
-	return (i);
-}
-
-char	*cast(const char *a)
+/*char	*cast(const char *a)
 {
 	char	*b;
 
 	b = (char *)a;
 	return (b);
-}
+}*/
+
+/*size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+{
+	size_t remaining;
+
+	if (dst == NULL || src == NULL)
+		return (0);
+	remaining = dstsize - ft_strlen(dst);
+	if (remaining == 0)
+		return (ft_strlen(src) + ft_strlen(dst));
+	ft_strlcpy(dst + ft_strlen(dst), src, remaining);
+	return (ft_strlen(dst) + ft_strlen(src));
+}*/
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
@@ -41,27 +42,27 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	remaining;
 	size_t	dlen;
 
+	if (dst == NULL || src == NULL)
+		return (0);
 	remaining = dstsize;
 	d = dst;
-	s = cast(src);
-	while (remaining-- != 0 && *d)
+	s = cast(src) - 1;
+	while (remaining-- && *d)
 		d++;
 	dlen = d - dst;
 	remaining = dstsize - dlen;
 	if (remaining == 0)
 		return (ft_strlen(src) + dlen);
-	while (*s)
+	while (remaining-- != 1 && *(++s))
 	{
-		if (remaining != 1)
-		{
-			*d++ = *s;
-			remaining--;
-		}
-		s++;
+		*d++ = *s;
+		//remaining--;
+		//s++;
 	}
 	*d = '\0';
-	return (dlen + (s - src));
+	return (dlen + ft_strlen(src));
 }
+
 /*int main() {
     // Write C code here
     char s1o[30] = "hello";

@@ -29,6 +29,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	char	*str;
 	char	*ned;
 
+	if (haystack == NULL || needle == NULL)
+		return (0);
 	str = (char *)haystack;
 	ned = (char *)needle;
 	i = 0;

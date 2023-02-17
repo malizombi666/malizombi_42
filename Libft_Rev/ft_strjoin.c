@@ -26,13 +26,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	buff = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!buff)
 		return (0);
-	while (r1[i])
+	while (r1 && r1[i])
 	{
 		buff[i] = r1[i];
 		i++;
 	}
 	j = 0;
-	while (r2[j])
+	while (r2 && r2[j])
 		buff[i++] = r2[j++];
 	buff[i] = '\0';
 	return (buff);

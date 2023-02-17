@@ -16,6 +16,8 @@ void	*ft_memset(void *b, int c, size_t len)
 {
 	char	*runner;
 
+	if (b == NULL)
+		return (0);
 	runner = b;
 	while (len--)
 		*(runner++) = c;

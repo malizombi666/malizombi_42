@@ -14,14 +14,14 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char	*buffer;
-	int		bytes;
-	void	*b;
+	char		*buffer;
+	size_t		bytes;
+	void		*b;
 
 	bytes = count * size;
-	if (bytes >= __INT_MAX__ || size == SIZE_MAX || count == SIZE_MAX)
+	if (SIZE_MAX / count < size)
 		return (0);
-	buffer = malloc(bytes);
+	buffer = (char *)malloc(bytes);
 	if (buffer)
 	{
 		b = buffer;
