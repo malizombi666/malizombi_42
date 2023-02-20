@@ -6,7 +6,7 @@
 /*   By: manaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 14:56:05 by manaveti          #+#    #+#             */
-/*   Updated: 2023/01/28 21:59:42 by manaveti         ###   ########.fr       */
+/*   Updated: 2023/02/17 18:49:45 by manaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	while (i < n && (r1[i] || r2[i]))
 	{
 		if (r1[i] != r2[i])
-		{
 			return (r1[i] - r2[i]);
-		}
 		i++;
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: manaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 15:14:16 by manaveti          #+#    #+#             */
-/*   Updated: 2023/02/01 16:09:11 by manaveti         ###   ########.fr       */
+/*   Updated: 2023/02/17 18:48:21 by manaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -54,11 +54,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	if (remaining == 0)
 		return (ft_strlen(src) + dlen);
 	while (remaining-- != 1 && *(++s))
-	{
 		*d++ = *s;
-		//remaining--;
-		//s++;
-	}
 	*d = '\0';
 	return (dlen + ft_strlen(src));
 }

@@ -6,7 +6,7 @@
 /*   By: manaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 18:09:26 by manaveti          #+#    #+#             */
-/*   Updated: 2023/02/13 18:15:02 by manaveti         ###   ########.fr       */
+/*   Updated: 2023/02/17 19:00:47 by manaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*buffer;
 
-	if (content == NULL)
-		return (0);
 	buffer = malloc(sizeof(t_list));
 	if (!buffer)
 		return (0);
