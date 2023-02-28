@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: manaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 18:41:08 by manaveti          #+#    #+#             */
-/*   Updated: 2023/01/30 18:43:33 by manaveti         ###   ########.fr       */
+/*   Created: 2023/01/20 16:24:41 by manaveti          #+#    #+#             */
+/*   Updated: 2023/01/20 16:26:17 by manaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putchar_fd(char c, int fd)
+int	ft_tolower(int c)
 {
-	write (fd, &c, 1);
-	return (1);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }

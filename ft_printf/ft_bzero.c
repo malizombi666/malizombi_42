@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: manaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 18:41:08 by manaveti          #+#    #+#             */
-/*   Updated: 2023/01/30 18:43:33 by manaveti         ###   ########.fr       */
+/*   Created: 2023/01/21 18:14:54 by manaveti          #+#    #+#             */
+/*   Updated: 2023/01/26 20:04:07 by manaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putchar_fd(char c, int fd)
+void	ft_bzero(void *s, size_t n)
 {
-	write (fd, &c, 1);
-	return (1);
+	char	*runner;
+
+	if (s == NULL)
+		return ;
+	runner = s;
+	while (n--)
+		*(runner++) = '\0';
 }

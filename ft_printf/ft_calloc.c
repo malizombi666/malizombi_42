@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: manaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 18:41:08 by manaveti          #+#    #+#             */
-/*   Updated: 2023/01/30 18:43:33 by manaveti         ###   ########.fr       */
+/*   Created: 2023/01/28 20:13:17 by manaveti          #+#    #+#             */
+/*   Updated: 2023/02/20 17:01:53 by manaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putchar_fd(char c, int fd)
+void	*ft_calloc(size_t count, size_t size)
 {
-	write (fd, &c, 1);
-	return (1);
+	void	*buffer;
+
+	if (size && SIZE_MAX / size < count)
+		return (NULL);
+	buffer = malloc(count * size);
+	if (!buffer)
+		return (NULL);
+	ft_bzero(buffer, count * size);
+	return (buffer);
 }

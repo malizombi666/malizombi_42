@@ -48,14 +48,14 @@ int count_delimiter(char *str)
     return (count);
 }
 
-char *array_of_delimiters(char *str, int count)
+char *array_of_delimiters(char *str, int del_number)
 {
     char    *buffer;
     char    *b;
     
-    buffer = calloc(count + 1, sizeof(char));
+    buffer = calloc(del_number + 1, sizeof(char));
     b = buffer;
-    while (count)
+    while (del_number)
     {
         if (*str == '%')
         {
@@ -63,7 +63,7 @@ char *array_of_delimiters(char *str, int count)
             if (is_delimiter(*str))
             {
                 *(buffer++) = *str;
-                count--;
+                del_number--;
                 //buffer++;
             }
         }

@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: manaveti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 18:41:08 by manaveti          #+#    #+#             */
-/*   Updated: 2023/01/30 18:43:33 by manaveti         ###   ########.fr       */
+/*   Created: 2023/01/21 18:27:21 by manaveti          #+#    #+#             */
+/*   Updated: 2023/01/28 18:25:18 by manaveti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putchar_fd(char c, int fd)
+void	*ft_memcpy(void *to, const void *from, size_t num_bytes)
 {
-	write (fd, &c, 1);
-	return (1);
+	char	*to1;
+	char	*from1;
+
+	if (to == NULL || from == NULL)
+		return (to);
+	to1 = (char *)to;
+	from1 = (char *)from;
+	while (num_bytes--)
+		*(to1++) = *(from1++);
+	return (to);
 }
